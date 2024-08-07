@@ -1,5 +1,5 @@
 \usetikzlibrary{snakes, patterns}
-\tikzstyle{ground}=[fill,pattern=north east lines,draw=none,minimum width=1,minimum height=1]
+\tikzstyle{ground}=[fill,draw=none,pattern=north east lines,minimum width=1,minimum height=1]
 \tikzstyle{spring}=[snake=coil,segment length=2mm, segment amplitude=2mm]
 
 \part{力学}
@@ -141,9 +141,9 @@ s=\frac{v_2^2-v_1^2}{2a}
 \section{虎克定律}
 \begin{wrapfigure}{l}{0cm}
 \begin{tikzpicture}
-	\node (wall1) [ground, minimum width=1cm] {};
-    \draw (wall1.south west) -- (wall1.south east);
-	\draw[spring](0,-0.1)--(0,-2);
+	\node (wall1) [ground, above, minimum width=1cm, minimum height=5mm] at (0,0) {};
+	\draw (wall1.south west) -- (wall1.south east);
+	\draw[spring](0,0)--(0,-2);
 	\draw[thick] (-0.5,-2) rectangle (0.5,-3);
 \end{tikzpicture}
 \end{wrapfigure}
