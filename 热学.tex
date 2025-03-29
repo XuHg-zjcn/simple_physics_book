@@ -22,18 +22,16 @@
 \begin{tikzpicture}[xscale=0.04, yscale=0.02,domain=0:60]
 	\draw[->](0,0)--(60,0)node[left,above,font=\tiny]{$t/s$};
 	\draw[->](0,0)--(0,100)node[right,font=\tiny]{$T/^\circ C$};
-	\draw[color=red] plot(\x,{40+60*exp(-\x/15)});
-	\draw[color=green] plot(\x,{40-20*exp(-\x/15)});
 \end{tikzpicture}
 \end{wrapfigure}
 
 \begin{tabular}{c|c|c|c|c|c|c|c|c}
 \hline
 时间($s$) & 0 & 10 & 20 & 30 & 40 & 50 & 60 \\ \hline
-温度$T_A$($^\circ C$) & 100 & 70 & 55 & 48 & 44 & 42 & 41 \\ \hline
-温度$T_B$($^\circ C$) & 20 & 30 & 35 & 37 & 38 & 39 & 40 \\ \hline
-温度变化率$\frac{\Delta T_A}{\Delta t}$($^\circ C$) & & -3 & -1.5 & -0.7 & -0.4 & -0.2 & -0.1 \\ \hline
-温度变化率$\frac{\Delta T_B}{\Delta t}$($^\circ C$) & & 1 & 0.5 & 0.2 & 0.1 & 0.1 & 0.1 \\ \hline
+温度$T_A$($^\circ C$) & & & & & & & \\ \hline
+温度$T_B$($^\circ C$) & & & & & & & \\ \hline
+温度变化率$\frac{\Delta T_A}{\Delta t}$($^\circ C$) & & & & & & & \\ \hline
+温度变化率$\frac{\Delta T_B}{\Delta t}$($^\circ C$) & & & & & & & \\ \hline
 \end{tabular}
 
 观察实验记录的曲线图和数据表，曲线中A与B的温度会趋向相同。表格中A与B的温度变化率似乎有固定的比值为$3:1$，而最终温度与开始温度的差$\Delta T_A$和$\Delta T_B$的比值也为$3:1$。如果用该装置使用不同的初始温度进行实验，得到的比值不变。如果把A换成$n$倍的质量的相同物质，比例也会大$n$倍。相同质量的不同物品会有不同的比值。
