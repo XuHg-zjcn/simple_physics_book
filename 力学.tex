@@ -228,3 +228,124 @@ s=\frac{v_2^2-v_1^2}{2a}
 用弹簧测力计拉着一个物体进行变速运动，观察弹簧测力示速与物体运动之间的关系
 
 \subsection{牛顿第三定律}
+
+
+\section{常见的运动形式}
+\subsection{自由落体}
+物体在只受到重力，且初速度为0，设物体质量为$m$，所受重力$G=mg$，由于只受重力，合外力就是重力，按照牛顿第二定律$F=ma$，于是加速度$a=g$，由于加速的的大小和方向始终不变，所以物体做匀加速直线运动
+\begin{wrapfigure}{l}{0cm}
+\begin{tikzpicture}[scale=1,domain=0:2]
+	\draw[->](0,0)--(0,-2)node[right]{$y$};
+	\foreach \t in {0,...,4}
+		\draw[fill, color=red](0, -0.1*\t^2)circle[radius=0.5mm];
+\end{tikzpicture}
+\end{wrapfigure}
+按照匀变速直线运动公式$v=gt$，$y=\frac{1}{2}gt^2$ \\
+假设物体从距离地面高度$h$下落，则接触地面时$h=\frac{1}{2}gt^2$解得$t=\sqrt{\frac{2h}{g}}$，这时的速度为$v=\sqrt{2hg}$
+
+练习：\\
+1. 某物体从距离地面10米高释放（忽略空气阻力），计算：下落时间$\underline{\hbox to 7mm{}}$，接触地面前的速度$\underline{\hbox to 7mm{}}$ \\
+2. 月球表面的重力加速度只有地球表面的1/6，则物体在月球上从相同高度下落到地面所需的时间为地球上的（）\\
+A：$\frac{1}{6}$倍，B：6倍，C：$\frac{\sqrt{6}}{6}$倍，D：$\sqrt{6}$倍 \\
+3. 下例描述自由落体运动中物理量之间关系的大致图象哪些是正确的（）\\
+\begin{tabular}{cccc}
+\begin{tikzpicture}[scale=1,domain=0:2]
+	\draw[->](0,0)--(2,0)node[above]{$t$};
+	\draw[->](0,0)--(0,2)node[right]{$v$};
+	\draw[color=red] plot(\x,{0.5+0.75*\x});
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=1,domain=0:2]
+	\draw[->](0,0)--(2,0)node[above]{$y$};
+	\draw[->](0,0)--(0,2)node[right]{$v$};
+	\draw[color=red] plot(\x,{1.2*sqrt(\x)});
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=1,domain=0:2]
+	\draw[->](0,0)--(2,0)node[above]{$t$};
+	\draw[->](0,0)--(0,2)node[right]{$a$};
+	\draw[color=red] plot(\x,{4/(\x+2)});
+\end{tikzpicture} &
+\begin{tikzpicture}[scale=1,domain=0:2]
+	\draw[->](0,0)--(2,0)node[above]{$y$};
+	\draw[->](0,0)--(0,2)node[right]{$a$};
+	\draw[color=red] plot(\x,{1});
+\end{tikzpicture} \\
+A & B & C & D
+\end{tabular}
+
+\subsection{平抛运动}
+我们建立坐标系，以水平运动方向为x轴正方向，y轴竖直向下，以起抛点为坐标原点。水平方向在抛出后没有受力，只取决于初速度，做匀速直线运动；竖直方向没有初速度，做自由落体运动
+\begin{wrapfigure}{l}{0cm}
+\begin{tikzpicture}[scale=1,domain=0:2]x
+	\draw[->](0,0)--(2,0)node[above]{$x$};
+	\draw[->](0,0)--(0,-2)node[right]{$y$};
+	\draw[color=red] plot(\x,{-0.5*pow(\x,2)});
+\end{tikzpicture}
+\end{wrapfigure}
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			v_x &= v_0 \\
+			v_y &= gt \\
+		\end{aligned}
+	\right.
+	\label{pingpao_speed}
+\end{equation}
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			x &= v_0 t \\
+			y &= \frac{1}{2}gt^2 \\
+		\end{aligned}
+	\right.
+	\label{pingpao_position}
+\end{equation}
+得到了水平和垂直方向两个速度分量和坐标，计算可得速度大小$v=\sqrt{v_0^2+g^2t^2}$和位移大小$x=\sqrt{v_0^2t^2+\frac{1}{4}g^2t^4}$ \\
+假设物体从距离地面高度$h$抛射，下落时间为$h=\frac{1}{2}gt^2$，$t=\sqrt{\frac{2h}{g}}$（与自由落体相同），水平位移为$x=v_0 \sqrt{\frac{2h}{g}$，位移大小为$\sqrt{x^2+y^2}=\underline{\hbox to 15mm{}}$，接触地面前速度大小为$\sqrt{v_x^2+v_y^2}=\underline{\hbox to 15mm{}}$（请读者自行计算）
+
+练习：\\
+1. 一物体在高为$h$，以某初速度平抛，落地点与抛射点的水平距离为$l$，求初速度 \\
+2. 某飞机飞行在高度$8000m$，速度$720km/h$向目标匀速飞行，求距离目标的水平距离多少时从飞机上投下炮弹刚好能击中目标 \\
+
+\subsection{斜抛运动}
+如果初速度不于地面平行或垂直（斜抛），初速度可以分解成两个分量 \\
+\begin{wrapfigure}{l}{0cm}
+\begin{tikzpicture}[scale=1,domain=0:2]
+	\draw[->](0,0)--(2,0)node[above]{$x$};
+	\draw[->](0,0)--(0,2)node[right]{$y$};
+	\draw[color=red] plot(\x,{4*\x-2*pow(\x,2)});
+	\draw[dashed](0,0)--(0.5,3.5*0.5);
+	\draw (0.2,0) arc (0:74:0.2)node[right]{$\theta$}
+\end{tikzpicture}
+\end{wrapfigure}
+我们建立坐标系，以水平运动方向为x轴正方向，y轴竖直向上，以起抛点为坐标原点。
+水平分量为直线运动，竖直分量为匀变速直线运动，可以得到速度随时间变化的方程。
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			v_x &= v_0\cos\theta \\
+			v_y &= v_0\sin\theta-gt \\
+		\end{aligned}
+	\right.
+	\label{xiepao_speed}
+\end{equation}
+\begin{equation}
+	\left\{
+		\begin{aligned}
+			x &= v_0\cos\theta t \\
+			y &= v_0\sin\theta t-\frac{1}{2}gt^2 \\
+		\end{aligned}
+	\right.
+	\label{xiepao_position}
+\end{equation}
+将(\ref{xiepao_position})的x式变形为$t=\frac{x}{v_0\cos\theta}$代入y式，消去t变量，
+\begin{equation}
+y=v_0\sin\theta \frac{x}{v_0\cos\theta}-\frac{1}{2}g(\frac{x}{v_0\cos\theta})^2
+\end{equation}
+\begin{equation}
+y=\frac{\sin\theta}{\cos\theta} x-\frac{g}{2 v_0^2\cos^2\theta} x^2
+\end{equation}
+按照抛物线顶点公式算得最高点坐标为$(\frac{v_0^2\cos\theta\sin\theta}{g},\frac{v_0^2 \sin^2\theta}{2g})$，经过三角函数降幂可化为$(\frac{v_0^2}{2g}\sin2\theta,\frac{v_0^2}{4g}(1-\cos2\theta))$，当物体处于最高点的时刻为$t=\frac{v_0\sin\theta}{g}$。\\
+当物体落到于发射点同一高度，称为射程，列出$y=0$方程，其中一个解为$x=\frac{2v_0^2\cos\theta\sin\theta}{g}$，或经过三角函数降幂可化为$\frac{v_0^2}{g}\sin2\theta$，也可使用抛物线的对称性得到此点，此时的时间为$t=\frac{2v_0\sin\theta}{g}$
+
+练习：\\
+1. 某大炮安装在地面，发射初速度始终为$400m/s$，求该大炮的最大射程，当地面目标距离大炮$8km$时，求发射仰角应为多少
